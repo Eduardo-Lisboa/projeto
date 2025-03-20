@@ -11,4 +11,8 @@ export default class ProvedorJwt {
         })
     }
 
+    obter(token: string): string | object{
+        return jwt.verify(token, this.segredo) as string | object;
+    }
+
 } 

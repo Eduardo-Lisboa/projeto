@@ -2,13 +2,14 @@ import LoginUsuario from '@/core/usuario/service/LoginUsuario';
 import RegistrarUsuario from '@/core/usuario/service/RegistrarUsuario';
 import { Express } from 'express';
 import ProvedorJwt from './ProvedorJwt';
+import UsuarioMiddleware from './UsuarioMiddleware';
 export default class LoginUsuarioController {
     constructor(
         servidor: Express,
         casoDeUso: LoginUsuario
     ) {
         
-        servidor.post('/api/usuarios/login', async (req, res) => {
+        servidor.post('/api/usuarios/login',async (req, res) => {
             try {
 
                 const  provedorJwt = new ProvedorJwt(process.env.JWT_SECRET || "");

@@ -1,11 +1,11 @@
 meta {
-  name: Valida Token
+  name: Obter Produto
   type: http
   seq: 4
 }
 
 post {
-  url: {{host}}/api/usuarios/login
+  url: {{host}}/api/produtos/def
   body: formUrlEncoded
   auth: bearer
 }
@@ -20,10 +20,4 @@ body:json {
     "email": "dudu@gmail.com",
     "senha": "cuzinho123"
   }
-}
-
-body:form-urlencoded {
-  email: dudumal231123@gmail.com
-  senha: cuzinnho3
-  token: {{jwt_token}}
 }

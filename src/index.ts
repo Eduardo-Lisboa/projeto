@@ -6,6 +6,9 @@ import SenhaCripto from './external/auth/SenhaCripto';
 import RegistrarUsuarioController from './external/api/RegistrarUsuarioController';
 import LoginUsuario from './core/usuario/service/LoginUsuario';
 import LoginUsuarioController from './external/api/LoginDeUsuarioController';
+import ObterProdutoPorId from './core/produto/service/ObterProdutoPorId';
+import ObterProdutoPorIdController from './external/api/ObterProdutoPorIdController';
+import UsuarioMiddleware from './external/api/UsuarioMiddleware';
 
 dotenv.config();
 
@@ -43,4 +46,16 @@ const registrarUsuarioController = new RegistrarUsuarioController(
 const loginUsuarioController = new LoginUsuarioController(
     app, 
     loginUsuario
+);
+
+
+
+const usuarioMid =  UsuarioMiddleware(repositorioUsuario);
+
+const obterPordutoPorId = new ObterProdutoPorId();
+
+const obterPordutoPorIdController = new ObterProdutoPorIdController(
+    app, 
+    obterPordutoPorId,
+    usuarioMid
 );
