@@ -1,0 +1,25 @@
+meta {
+  name: Registrar Usuario
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/api/usuarios/registrar
+  body: formUrlEncoded
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "Eduardo",
+    "email": "dudu@gmail.com",
+    "senha": "cuzinho123"
+  }
+}
+
+body:form-urlencoded {
+  nome: eduardo
+  email: dudumal231123@gmail.com
+  senha: cuzinnho3
+}

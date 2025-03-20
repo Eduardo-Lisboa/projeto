@@ -1,0 +1,29 @@
+meta {
+  name: Valida Token
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{host}}/api/usuarios/login
+  body: formUrlEncoded
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{tokenValue}}
+}
+
+body:json {
+  {
+    "nome": "Eduardo",
+    "email": "dudu@gmail.com",
+    "senha": "cuzinho123"
+  }
+}
+
+body:form-urlencoded {
+  email: dudumal231123@gmail.com
+  senha: cuzinnho3
+  token: {{jwt_token}}
+}
